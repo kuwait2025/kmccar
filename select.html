@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ملخص الحجز</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-image: url('img1.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 700px;
+}
+
+    h1 {
+      color: #2f3b85;
+      margin-bottom: 30px;
+    }
+
+    .summary-box {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: right;
+    }
+
+    .summary-item {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    .summary-item span {
+      font-weight: bold;
+      color: #001060;
+    }
+
+    .button {
+      margin-top: 30px;
+      background-color: #001060;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #0020a0;
+    }
+    h1{
+        color: #ffffff;
+        border-radius: 10px;
+
+    }
+    #buttone{
+        width: 320px;
+    }
+
+    #tex{
+                text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="tex">ملخص طلبك</h1>
+
+  <div class="summary-box">
+    <div class="summary-item">👤 الاسم: <span id="userName"></span></div>
+    <div class="summary-item">📘 عدد الدروس: <span id="lessonsCount"></span> ساعة</div>
+    <div class="summary-item">🧑‍🏫 نوع المدرب: <span id="trainerType"></span></div>
+    <div class="summary-item">🚘 نوع المركبة: <span id="vehicleType"></span></div>
+
+    <button class="button" id="payButton" onclick="goToPayment()"></button>
+
+  </div>
+
+
+  <div> 
+<h1> 
+    سدد الان 5 دينار لتأكيد حجز الموعد والباقي عند بدء التدريب        
+</h1>
+    <button class="button" id="buttone" onclick="buttone()"> تسديد 5 دينار</button>
+</div>
+
+  <script>
+    const userName = localStorage.getItem("userName") || "غير محدد";
+    const lessonsCount = localStorage.getItem("lessonsCount") || "0";
+    const trainerType = localStorage.getItem("trainerType") || "غير محدد";
+    const vehicleType = localStorage.getItem("vehicleType") || "غير محدد";
+    const totalPrice = localStorage.getItem("totalPrice") || "0 دينار";
+
+    document.getElementById("userName").textContent = userName;
+    document.getElementById("lessonsCount").textContent = lessonsCount;
+    document.getElementById("trainerType").textContent = trainerType;
+    document.getElementById("vehicleType").textContent = vehicleType;
+
+    const payButton = document.getElementById("payButton");
+    payButton.textContent = `تسديد المبلغ الإجمالي: ${totalPrice}`;
+
+    function goToPayment() {
+      window.location.href = "kpaytotal.html"; 
+    }
+function buttone() {
+      window.location.href = "kpaykuwait.html"; 
+    }
+    
+  </script>
+
+</body>
+</html>

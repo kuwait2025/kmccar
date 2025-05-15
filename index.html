@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <title>اطلب عرض سعر</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+          min-height: 150vh;
+
+    }
+
+    .navbar {
+      background-color: #404985;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      color: gold;
+      margin: 5px 10px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .header {
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      color: #2f3b85;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: #f7f7f7;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select {
+      width: 370px;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #001060;
+      color: white;
+      padding: 10px 30px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      display: block;
+      margin: auto;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background-color: #001a80;
+    }
+
+    #lessonsCount ,#trainerType ,#vehicleType {
+width: 370px;
+height: 30px;
+background-color: #ffffff;
+border-radius: 5px;
+padding: 1px;
+    }
+
+
+    input[type="number"] {
+      width: 370px;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">الصفحة الرئيسية</a>
+    <a href="index.html">دورات تعليم القيادة</a>
+    <a href="index.html">القيادة الاحترافية</a>
+    
+  </div>
+
+  <div class="header">  طلب موعد اختبار قيادة</div>
+
+  <div class="contact-info">
+    تواصل معنا من خلال واتس اب<strong>97536079</strong> 
+  </div>
+
+  <form id="quoteForm">
+  <label>الاسم</label>
+  <input type="text" id="userName" placeholder="الاسم الكامل" 
+  required
+    oninvalid="this.setCustomValidity('   يرجى ادخال الاسم الكامل   ' )"
+  oninput="this.setCustomValidity('')"/>
+
+  <label>الرقم المدني</label>
+  <input
+    type="text"
+    id="civilId"
+    placeholder="الرقم المدني"
+    inputmode="numeric"
+    pattern="2[0-9]{11}"
+    maxlength="12"
+    required
+     
+  oninvalid="this.setCustomValidity('   يرجى ادخال الرقم المدني بشكل صحيح   ' )"
+  oninput="this.setCustomValidity('')"
+  />
+
+  <label>تاريخ الميلاد</label>
+  <input type="text" id="birthdate" placeholder="DD/MM/YYYY" maxlength="10"
+  required
+    oninvalid="this.setCustomValidity('  يرجى ادخال تاريخ الميلاد   ' )"
+  oninput="this.setCustomValidity('')" />
+
+  <label>البريد الإلكتروني</label>
+  <input type="email" id="email" placeholder="example@email.com" 
+  required
+    oninvalid="this.setCustomValidity(' يرجى ادخال البريد الالكتروني   ' )"
+  oninput="this.setCustomValidity('')"/>
+
+ <label>رقم الموبايل</label>
+<input
+  type="text"
+  id="phone"
+  placeholder="رقم الموبايل"
+  inputmode="numeric"
+  pattern="[965][0-9]{7}"
+  maxlength="8"
+  required
+   
+  oninvalid="this.setCustomValidity('يرجى إدخال رقم موبايل صحيح يبدأ بـ 9 أو 6 أو 5 ويتكوّن من 8 أرقام')"
+  oninput="this.setCustomValidity('')"
+/>
+
+
+<label>عدد الدروس المطلوبة</label>
+<select id="lessonsCount" required oninvalid="this.setCustomValidity('يرجى اختيار عدد الساعات المطلوبة')" oninput="this.setCustomValidity('')">
+  <option value="" disabled selected>اختر</option>
+  <option value="2">2 ساعة</option>
+  <option value="4">4 ساعة</option>
+  <option value="6">6 ساعة</option>
+  <option value="8">8 ساعة</option>
+  <option value="10">10 ساعة</option>
+</select>
+
+
+  <label>اختيار المدرب</label>
+  <select id="trainerType" required oninvalid="this.setCustomValidity('يرجى اختيار المدرب/المدربة  ')" oninput="this.setCustomValidity('')">
+  <option value="" disabled selected>اختر</option>
+    
+  <option>مدرب</option>
+      <option>مدربة</option>
+</select>
+
+  <label>نوع المركبة</label>
+  <select id="vehicleType" required oninvalid="this.setCustomValidity('يرجى اختيار نوع المركبة  ')" oninput="this.setCustomValidity('')">
+  <option value="" disabled selected>اختر</option> 
+    
+   <option>السيارات الخفيفة</option>
+      <option>السيارات الثقيلة</option>
+      <option> الدراجات النارية</option>
+      <option>قارب بحري </option>
+</select>
+
+  <label>السعر الكلي</label>
+  <div id="priceDisplay"> دينار</div>
+
+  <button type="submit">إرسال</button>
+</form>
+
+<script src="main.html/null/null/null/mail2.html/null/eror/eror/null/otp.html/nul1/null2/formindex.js"> </script>
+</body>
+</html>
